@@ -1,20 +1,16 @@
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { StyleSheet } from "react-native";
+import React from "react";
+import { View } from "react-native";
+import { Text } from "~/components/ui/text";
+import { Colors } from "~/constants/Colors";
+import { useColorScheme } from "~/hooks/useColorScheme";
 
 export default function AccountsScreen() {
+  const { colorScheme } = useColorScheme();
+  const colors = Colors[colorScheme];
+
   return (
-    <ThemedView style={styles.content} safe>
-      <ThemedText type="title">Accounts</ThemedText>
-    </ThemedView>
+    <View style={{ backgroundColor: colors.background }} className="flex-1 p-4">
+      <Text style={{ color: colors.text }}>Account details will go here</Text>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  content: {
-    flex: 1,
-    padding: 32,
-    gap: 16,
-    overflow: "hidden",
-  },
-});
