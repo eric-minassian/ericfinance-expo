@@ -1,16 +1,17 @@
 import { Tabs } from "expo-router";
 import React from "react";
+import { ChartNoAxesColumn } from "~/components/icons/Chart";
+import { CreditCard } from "~/components/icons/CreditCard";
 import { House } from "~/components/icons/House";
-import { Wallet } from "~/components/icons/Wallet";
-import { Header } from "~/components/ui/header";
+import { Layers } from "~/components/icons/Layers";
+import { Map } from "~/components/icons/Map";
+import { Text } from "~/components/ui/text";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        header: ({ route, options }) => (
-          <Header title={options.title ?? route.name} />
-        ),
+        headerShadowVisible: false,
       }}
     >
       <Tabs.Screen
@@ -18,42 +19,46 @@ export default function TabLayout() {
         options={{
           title: "Dashboard",
           tabBarIcon: ({ color }) => <House color={color} />,
+          headerLeft: () => <Text>Left</Text>,
+          headerRight: () => <Text>Right</Text>,
         }}
       />
       <Tabs.Screen
         name="accounts"
         options={{
           title: "Accounts",
-          tabBarIcon: ({ color }) => <Wallet color={color} />,
-        }}
-      />
-      {/* <Tabs.Screen
-        name="transactions"
-        options={{
-          title: "Transactions",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="creditcard.fill" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Layers color={color} />,
+          headerLeft: () => <Text>Left</Text>,
+          headerRight: () => <Text>Right</Text>,
         }}
       />
       <Tabs.Screen
-        name="cashflow"
+        name="transactions"
+        options={{
+          title: "Transactions",
+          tabBarIcon: ({ color }) => <CreditCard color={color} />,
+          headerLeft: () => <Text>Left</Text>,
+          headerRight: () => <Text>Right</Text>,
+        }}
+      />
+      <Tabs.Screen
+        name="cash-flow"
         options={{
           title: "Cash Flow",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="chart.bar.fill" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <ChartNoAxesColumn color={color} />,
+          headerLeft: () => <Text>Left</Text>,
+          headerRight: () => <Text>Right</Text>,
         }}
       />
       <Tabs.Screen
         name="budget"
         options={{
           title: "Budget",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="map.fill" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Map color={color} />,
+          headerLeft: () => <Text>Left</Text>,
+          headerRight: () => <Text>Right</Text>,
         }}
-      /> */}
+      />
     </Tabs>
   );
 }
