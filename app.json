@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ericfinance-expo",
-    "slug": "ericfinance-expo",
+    "name": "ericfinance",
+    "slug": "ericfinance",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "ericfinanceexpo",
+    "scheme": "ericfinance",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
