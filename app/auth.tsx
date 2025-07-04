@@ -1,11 +1,11 @@
-import { ThemedText } from "@/components/ThemedText";
+import Auth from "@/components/Auth";
 import { ThemedView } from "@/components/ThemedView";
 import { StyleSheet } from "react-native";
 
-export default function HomeScreen() {
+export default function AuthScreen() {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText>Home</ThemedText>
+      <Auth />
     </ThemedView>
   );
 }
